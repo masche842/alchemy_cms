@@ -7,24 +7,30 @@
 
   <style type="text/css">
     body {
-      margin-top: 1.0em;
-      background-color: #a3ccfa;
+      margin: 0;
+      background-color: #DAE7FA;
       font-family: Helvetica, Arial, FreeSans, san-serif;
       color: #000000;
     }
     #container {
       margin: 0 auto;
       width: 700px;
+      padding: 2em;
+      background-color: white;
+      -webkit-box-shadow: 0 0 8px #333;
+      -moz-box-shadow: 0 0 8px #333;
+      box-shadow: 0 0 8px #333;
     }
-    h1 { font-size: 3.8em; color: #5c3305; margin-bottom: 3px; }
+    h1 { font-size: 3.8em; color: #333; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #5c3305; }
-    h3 { text-align: center; color: #5c3305; }
-    a { color: #5c3305; }
+    h2 { font-size: 1.5em; color: #333; }
+    h3 { text-align: left; color: #333; }
+    p {line-height: 1.5em;}
+    a { color: #333; }
     .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
+    pre { background: #000; color: #fff; padding: 15px; line-height: 1.5em; overflow-x: auto;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
   </style>
@@ -48,60 +54,58 @@
     <div class="description">
       Alchemy. A Web CMS for human beings.
     </div>
-
-    <p>About
-
-Alchemy is a fully featured Web-CMS which beautifully integrates into rails. For more Information please visit http://alchemy-app.com
-
-Rails Version
-
-Alchemy is not yet Rails 3 and Ruby 1.9.2 compatible. We strongly recommend Rails 2.3.10 and Ruby 1.8.7.
-</p><h2>Dependencies</h2>
-<p>Gems:
-
-'acts_as_ferret', :version => '0.4.8.2'
-'authlogic', :version => '>=2.1.2'
-'awesome_nested_set', :version => '>=1.4.3'
-'declarative_authorization', :version => '>=0.4.1'
-"fleximage", :version => ">=1.0.4"
-'fast_gettext', :version => '>=0.4.8'
-'gettext_i18n_rails', :version => '0.2.3'
-'gettext', :lib => false, :version => '>=1.9.3'
-'rmagick', :lib => "RMagick2", :version => '>=2.12.2'
-'jk-ferret', :version => '>=0.11.8.2', :lib => 'ferret'
-'will_paginate', :version => '2.3.15'
-'mimetype-fu', :version => '>=0.1.2', :lib => 'mimetype_fu'
-
-Plugins:
-
+    <h3>About</h3>
+    <p>
+      Alchemy is a fully featured Web-CMS which beautifully integrates into rails. For more Information please visit <a href="http://alchemy-app.com" target="_blank">http://alchemy-app.com</a>
+    </p>
+    <h3>Rails Version</h3>
+    <p>Alchemy is not yet Rails 3 and Ruby 1.9.2 compatible. We strongly recommend Rails 2.3.10 and Ruby 1.8.7.</p>
+    <h2>Dependencies</h2>
+    <h3>Gems</h3>
+    <p>
+      <pre>
+acts_as_ferret --version=0.4.8.2
+authlogic --version=2.1.2
+awesome_nested_set --version=1.4.3
+declarative_authorization --version=0.4.1
+fleximage --version=1.0.4
+fast_gettext --version=0.4.8
+gettext_i18n_rails --version=0.2.3
+rmagick --version=2.12.2
+jk-ferret --version=0.11.8.2
+will_paginate --version=2.3.15
+mimetype-fu --version=0.1.2</pre>
+    </p>
+    <h3>Plugins</h3>
+    <p>
+      <pre>
 git://github.com/rails/acts_as_list.git
 git://github.com/technoweenie/attachment_fu.git
 git://github.com/iain/i18n_label.git
 git://github.com/aaronchi/jrails.git
 git://github.com/trevorrowe/tinymce_hammer.git
-git://github.com/delynn/userstamp.git
-</p>
-<h2>Install</h2>
-<p>Install via Rails template:
-
-We have a fancy Rails template that does all the installation stuff for you. You can find it here:
-
-http://github.com/tvdeyen/alchemy-rails-templates/
-
-Just enter:
-
-rails _2.3.10_ -d mysql -m https://github.com/tvdeyen/alchemy-rails-templates/raw/master/install_alchemy.rb YOUR_APP_NAME
-
-into your terminal and follow the instructions displayed after the templates executes.
-</p>
-<h2>License</h2>
-<p>GPLv3</p>
-<h2>Authors</h2>
-<p>Robin Böning (robin.boening@nethosting4you.de)<br/>Thomas von Deyen (tvdeyen@gmail.com)<br/>Carsten Fregin (cfregin@me.com)</p>
-<h2>Contact</h2>
-<p>Thomas von Deyen (tvdeyen@gmail.com)</p>
-
-
+git://github.com/delynn/userstamp.git</pre>
+    </p>
+    <h2>Install</h2>
+    <h3>Install via Rails template:</h3>
+    <p>
+      We have a fancy Rails template that does all the installation stuff for you. You can find it here:
+      <pre>http://github.com/tvdeyen/alchemy-rails-templates/</pre>
+    </p>
+    <p>
+      Just enter:
+      <pre>rails _2.3.10_ -d mysql -m https://github.com/tvdeyen/alchemy-rails-templates/raw/master/install_alchemy.rb YOUR_APP_NAME</pre>
+    </p>
+    <p>into your terminal and follow the instructions displayed after the templates executes.</p>
+    <h2>License</h2>
+    <p>GPLv3</p>
+    <h2>Authors</h2>
+    <p>Robin Böning (robin.boening@nethosting4you.de)
+      <br/>Thomas von Deyen (tvdeyen@gmail.com)
+      <br/>Carsten Fregin (cfregin@me.com)
+    </p>
+    <h2>Contact</h2>
+    <p>Thomas von Deyen (tvdeyen@gmail.com)</p>
     <h2>Download</h2>
     <p>
       You can download this project in either
