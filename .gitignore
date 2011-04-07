@@ -1,10 +1,2 @@
 .DS_Store
 .svn
-app/
-assets/
-config/
-db/
-generators/
-lib/
-locale/
-recipes/
