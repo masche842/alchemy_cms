@@ -1,8 +1,8 @@
 class Admin::PagesController < AlchemyController
   
-  helper :pages
+  ssl_required :crud, :configure, :link, :fold, :layoutpages, :unlock, :flush, :switch_language, :order, :sort, :visit, :copy_language, :publish
   
-  layout 'alchemy'
+  helper :pages
   
   before_filter :set_translation, :except => [:show]
   before_filter :get_page_from_id, :only => [:show, :unlock, :visit, :publish, :configure, :edit, :update, :destroy, :fold]

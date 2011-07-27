@@ -1,6 +1,6 @@
 class Admin::EssenceFilesController < AlchemyController
   
-  layout 'alchemy'
+  ssl_required :crud
   
   filter_access_to :all
   

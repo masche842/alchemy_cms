@@ -1,8 +1,9 @@
 class Admin::LanguagesController < AlchemyController
   
+  ssl_required :crud
+  
   filter_resource_access
   before_filter :set_translation
-  layout 'alchemy'
   
   def index
     if !params[:query].blank?

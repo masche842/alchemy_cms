@@ -1,6 +1,6 @@
 class Admin::ContentsController < AlchemyController
 
-	layout 'alchemy'
+	ssl_required :crud, :order
 	
 	filter_access_to :all
 	

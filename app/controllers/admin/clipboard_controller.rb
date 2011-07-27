@@ -1,6 +1,6 @@
 class Admin::ClipboardController < AlchemyController
   
-  layout 'alchemy'
+  ssl_required :crud, :insert, :clear
   
   before_filter :set_translation
   

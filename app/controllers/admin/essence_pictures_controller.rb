@@ -1,6 +1,6 @@
 class Admin::EssencePicturesController < AlchemyController
   
-  layout 'alchemy'
+  ssl_required :edit, :crop, :update, :assign, :save_link, :destroy
   
   filter_access_to :all
   

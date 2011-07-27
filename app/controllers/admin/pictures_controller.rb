@@ -1,6 +1,8 @@
 class Admin::PicturesController < AlchemyController
+  
+  #ssl_required :crud, :archive_overlay, :flush, :show_in_window
+  
   protect_from_forgery :except => [:create]
-  layout 'alchemy'
   
   before_filter :set_translation
   

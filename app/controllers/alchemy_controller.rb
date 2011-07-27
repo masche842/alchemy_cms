@@ -5,6 +5,7 @@ class AlchemyController < ApplicationController
   include FastGettext::Translation
   include Alchemy
   include Userstamp
+  include SslRequirement if !!Alchemy::Configuration.get(:enable_ssl) && proc{|c|c.request.port != '3000'}
   
   protect_from_forgery
   filter_parameter_logging :login, :password, :password_confirmation
@@ -228,5 +229,5 @@ protected
   def trash_empty?(category)
     category.singularize.classify.constantize.trashed.blank?
   end
-  
+
 end

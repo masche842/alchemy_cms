@@ -1,6 +1,6 @@
 class Admin::ElementsController < AlchemyController
   
-  layout 'alchemy'
+  ssl_required :crud, :list, :trash, :order, :fold
   
   before_filter :set_translation
   

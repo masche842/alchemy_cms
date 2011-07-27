@@ -34,4 +34,13 @@ module LayoutHelper
     end
   end
   
+  def new_asset_url_with_session_information(asset_type)
+    session_key = ActionController::Base.session_options[:key]
+    if asset_type == "picture"
+      admin_pictures_url(:protocol => 'http', session_key => cookies[session_key], request_forgery_protection_token => form_authenticity_token)
+    elsif asset_type == "attachment"
+      admin_attachments_url(:protocol => 'http', session_key => cookies[session_key], request_forgery_protection_token => form_authenticity_token)
+    end
+  end
+  
 end

@@ -1,6 +1,6 @@
 class Admin::UsersController < AlchemyController
-
-  layout 'alchemy'
+  
+  ssl_required :crud
   
   filter_access_to [:edit, :update, :destroy], :attribute_check => true
   filter_access_to [:index, :new, :create], :attribute_check => false

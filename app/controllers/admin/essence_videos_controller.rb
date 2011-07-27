@@ -1,6 +1,6 @@
 class Admin::EssenceVideosController < AlchemyController
   
-  layout 'alchemy'
+  ssl_required :update
   
   filter_access_to :update
   

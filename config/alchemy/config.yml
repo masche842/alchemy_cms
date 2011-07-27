@@ -6,6 +6,9 @@
 #
 #   rake alchemy:app_structure:create:config
 
+# Alchemys Admin Area is SSL secured. You can turn it of here. NOT RECOMMENDED!
+:enable_ssl: true
+
 # The amount of time of inactivity in minutes after which the user is kicked out of his current session.
 # Only active in production environment!!!
 :auto_logout_time: 30

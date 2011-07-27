@@ -1,7 +1,8 @@
 class Admin::AttachmentsController < AlchemyController
   
+  ssl_required :crud, :archive_overlay, :download
+  
   protect_from_forgery :except => [:create]
-  layout 'alchemy'
   
   before_filter :set_translation
   filter_access_to :all

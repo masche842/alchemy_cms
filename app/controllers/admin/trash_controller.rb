@@ -1,5 +1,7 @@
 class Admin::TrashController < AlchemyController
   
+  ssl_required :index, :clear
+  
   def index
     @elements = Element.trashed
     @page = Page.find_by_id(params[:page_id])
