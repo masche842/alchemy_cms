@@ -2,137 +2,241 @@
 <html>
 <head>
   <meta charset='utf-8'>
-
   <title>Alchemy CMS</title>
-
-  <style type="text/css">
-    body {
-      margin: 0;
-      background-color: #DAE7FA;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-      padding: 2em;
-      background-color: white;
-      -webkit-box-shadow: 0 0 8px #333;
-      -moz-box-shadow: 0 0 8px #333;
-      box-shadow: 0 0 8px #333;
-    }
-    h1 { font-size: 3.8em; color: #333; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #333; }
-    h3 { text-align: left; color: #333; }
-    p {line-height: 1.5em;}
-    a { color: #333; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px; line-height: 1.5em; overflow-x: auto;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+  <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 
 <body>
-  <a href="http://github.com/magiclabs/alchemy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
+	<header id="top">
+		<a href="http://api.alchemy-app.com">API Docs</a> • <a href="http://wiki.alchemy-app.com">Wiki</a>
+	</header>
   <div id="container">
+	
+    <h1>
+			<img src="images/ALchemy.png" alt="Alchemy CMS Logo">
+		</h1>
+		
+		<navigation>
+			<a href="#about">About</a>
+			<a href="#features">Features</a>
+			<a href="#demo">Demo</a>
+			<a href="#install">Install</a>
+			<a href="#community">Community</a>
+			<a href="#contact">Contact</a>
+		</navigation>
+		
+    <h2 id="about"><a href="#top">About</a></h2>
 
-    <div class="download">
-      <a href="http://github.com/magiclabs/alchemy/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/magiclabs/alchemy/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
+    <h4>Alchemy is a fully featured Content Management System (CMS) with a gorgeous user interface.</h4>
+		<p>Most content management system store content of a page in a body column in the pages table. This is easy to develop and the user manages the content inside one of the fancy new Javascript based wysiwyg processors. Formatting, image placement, styling and positioning of the content is in the hand of the end-user.</p>
 
-    <h1><a href="http://github.com/magiclabs/alchemy">Alchemy</a>
-      <span class="small">by <a href="http://magiclabs.de">magic <i>labs</i>*</a></span></h1>
+		<h3>We think this is completly wrong!</h3>
+		<p>The content manager mustn‘t be able to change anything but the content and some basic text formatting. The content manager shouldn‘t care about headline formatting, image positioning or resizing. The developer should take care of this!</p>
 
-    <div class="description">
-      Alchemy. A modern CMS for human beings.
-    </div>
-    <h3>About</h3>
-    <p>Alchemy is a fully featured Web-CMS which beautifully integrates into rails.</p>
-    <h3>Intuitive User Interface for humans!</h3>
+		<h3>Alchemy is different!</h3>
+		<p>We split the page into logical parts like headlines, paragraphs, images, etc. The only thing we store in the database is text, ids of images and richtext content. Nothing else. No markup (besides basic text formatting inside the richtext elements), no styling, no layout. Pure content!</p>
+		<p>This gives the webdeveloper the power and flexibility to implement any kind of layout with the insurance that the content manager is not able to break up the layout.</p>
+		
+		<h2 id="features"><a href="#top">Features</a></h2>
+		
+    <h3>Intuitive User Interface for human beeings</h3>
     <p>
       With it's modern App-like User Interface even non technical users can manage complex websites in an easy and intuitive way.
-      <img src="images/edit-page-content.png" alt="Editing page Content in Alchemy">
-    </p>
-    <h4>Powerfull image processing</h4>
+		</p>
+		<figure>
+     	<img src="images/edit-page.png" alt="Editing page Content in Alchemy">
+			<figcaption>Edit page content with live preview</figcaption>
+		</figure>
+
+    <h3>Powerfull image processing</h3>
     <p>
       You will never need an image processor any more. With the support for ImageMagick® Technology Alchemy renders images just the size the designer ment the images to be and caches them on disc.
-      <img src="images/image-upload.png" alt="Uploading images in Alchemy"><br>
-      <img src="images/picture-uploaded.png" alt="Uploaded an image in Alchemy"><br>
-      <img src="images/assign-image.png" alt="Assign an image in Alchemy">
     </p>
-    <h3>Rails Version</h3>
-    <p>Alchemy is not yet Rails 3 and Ruby 1.9.2 compatible. We strongly recommend Rails 2.3.10 and Ruby 1.8.7.</p>
-    <h2>Dependencies</h2>
-    <h3>Gems</h3>
+		<figure>
+			<img src="images/image-upload.png" alt="Uploading images in Alchemy">
+			<figcaption>Upload multiple images at once</figcaption>
+		</figure>
+		<figure>
+			<img src="images/assign-image.png" alt="Assign an image in Alchemy">	
+			<figcaption>Assign master image from archive to any gallery</figcaption>
+		</figure>
+		<figure>
+			<img src="images/crop-image.png" alt="Image cropping in Alchemy">	
+			<figcaption>Image croppping build right in!</figcaption>
+		</figure>
+		<figure>
+      <img src="images/image-archive.png" alt="Images Archive in Alchemy">
+			<figcaption>Upload a picture once and reuse it everywhere</figcaption>
+		</figure>
+
+		<h3>Details</h3>
+		<ul>
+			<li>
+				<h4>Highly flexible Templating:</h4>
+				<ul>
+					<li>Content is stored in small parts not as a complete, monolithic page.</li>
+					<li>The designer chooses the template structure, not the CMS!</li>
+					<li>Every Design is possible, no templating, or theming restrictions.</li>
+					<li>Even Flash® Content Management is possible</li>
+				</ul>
+			</li>
+			<li>
+				<h4>Gorgious End-User centric interface:</h4>
+				<ul>
+					<li>No markup editors and other meta programming tools.</li>
+				</ul>
+			</li>
+			<li>
+				<h4>Multilingual:</h4>
+				<ul>
+					<li>Create as many (complete independent) language trees as you want.</li>
+					<li>URL based language switching</li>
+				</ul>
+			</li>
+			<li>
+				<h4>Search Engine Friendly:</h4>
+				<ul>
+					<li>Every Part of SEO is manageable by the user</li>
+					<li>Human readable urls (multilingual)</li>
+					<li>automatic XML Sitemap generation</li>
+				</ul>
+			</li>
+			<li>
+				<h4>User Access Control:</h4>
+				<ul>
+					<li>Rolebased Authentification (RBAS)</li>
+					<li>Protect pages for restricted access</li>
+				</ul>
+			</li>
+			<li><h4>Fulltext Search</h4></li>
+			<li><h4>Contactforms</h4></li>
+			<li><h4>Attachments and downloads</h4></li>
+			<li>
+				<h4>Powerfull image rendering:</h4>
+				<ul>
+					<li>Resizing</li>
+					<li>Image Cropping via a graphical Userinterface!</li>
+					<li>Borders, Text, Rotation</li>
+					<li>and much more via Imagemagick processing (polaroid effect, etc.)</li>
+					<li>and everything gets cached for maximum speed!</li>
+				</ul>
+			</li>
+			<li>
+				<h4>Extendable:</h4>
+				<ul>
+					<li>Flexible Plugin DSL (through Rails Engines) allows you to add custom plugins into Alchemy</li>
+				</ul>
+			</li>
+			<li><h4>Integrates in exsiting Rails Apps</h4></li>
+			<li><h4>Caching</h4></li>
+			<li>
+				<h4>Free and OpenSource:</h4>
+				<ul>
+					<li>GPLv3 License*</li>
+					<li>No Enterprise Licences, or Community Editions</li>
+				</ul>
+			</li>
+			<li><h4>Hostable on any Server that supports RubyOnRails and ImageMagick</h4></li>
+		</ul>
+		
+		<h2 id="demo"><a href="#top">Demo</a></h2>
+		
+		<h4>Seeing is believing!</h4>
+		<p>So, we have a nice, little Demo for you:</p>
+		<p><a href="http://demo.alchemy-app.com">http://demo.alchemy-cms.com</a></p>
+		<p>Login into the admin interface:</p>
+		<p><a href="http://demo.alchemy-app.com/admin">http://demo.alchemy-cms.com/admin</a></p>
+		<p>
+			<label>Login:</label> <code>demo</code><br>
+			<label>Password:</label> <code>demo</code>
+		</p>
+		
+    <h2 id="install"><a href="#top">Install</a></h2>
+		<p>Alchemy is a <a href="http://rubyonrails.com">Ruby On Rails</a> based web software.</p>
+		<p>Never heard of it? Many popular websites and web-apps are powered by Ruby On Rails. Some popular examples are: Xing, Groupon, Qype, Shopify <a href="http://rubyonrails.org/applications">and many more</a>.</p>
+		<p>Installing Rails on your computer and/or server is <a href="http://guides.rubyonrails.org/getting_started.html">easy</a>.</p>
+		<h4>Rails / Ruby Versions</h4>
+    <p>Alchemy runs on >=Rails 2.3 (including Rails 3 as Ruby Gem).</p>
+		<p>We recommend using Ruby 1.8.7, because of lacking support of some Gems Alchemy depends on.</p>
+		<p>We are working on it!</p>
+		<p>Ruby Developer? <a href="#community">Help us!</a></p>
+    
+    <h3>Rails 2.3:</h3>
     <p>
-      <pre>
-acts_as_ferret --version=0.4.8.2
-authlogic --version=2.1.2
-awesome_nested_set --version=1.4.3
-declarative_authorization --version=0.4.1
-fleximage --version=1.0.4
-fast_gettext --version=0.4.8
-gettext_i18n_rails --version=0.2.3
-rmagick --version=2.12.2
-jk-ferret --version=0.11.8.2
-will_paginate --version=2.3.15
-mimetype-fu --version=0.1.2</pre>
+      For Rails 2.3 we recommend our shell installation script:<br>
+      <a href="https://github.com/magiclabs/alchemy-installer/">https://github.com/magiclabs/alchemy-installer/</a>
     </p>
-    <h3>Plugins</h3>
-    <p>
-      <pre>
-git://github.com/rails/acts_as_list.git
-git://github.com/technoweenie/attachment_fu.git
-git://github.com/iain/i18n_label.git
-git://github.com/aaronchi/jrails.git
-git://github.com/trevorrowe/tinymce_hammer.git
-git://github.com/delynn/userstamp.git</pre>
-    </p>
-    <h2>Install</h2>
-    <h3>Install via Rails template:</h3>
-    <p>
-      We have a fancy Rails template that does all the installation stuff for you. You can find it here:
-      <pre>http://github.com/magiclabs/alchemy-rails-templates/</pre>
-    </p>
-    <p>
-      Just enter:
-      <pre>rails _2.3.10_ -d mysql -m https://github.com/magiclabs/alchemy-rails-templates/raw/master/install_alchemy.rb YOUR_APP_NAME</pre>
-    </p>
-    <p>into your terminal and follow the instructions displayed after the templates executes.</p>
-    <h2>License</h2>
-    <p>GPLv3</p>
-    <h2>Authors</h2>
-    <p>Robin Böning (robin.boening@nethosting4you.de)
-      <br/>Thomas von Deyen (tvdeyen@gmail.com)
-      <br/>Carsten Fregin (fregin@me.com)
-    </p>
-    <h2>Contact</h2>
-    <p>Thomas von Deyen (tvdeyen@gmail.com)</p>
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/magiclabs/alchemy/zipball/master">zip</a> or
-      <a href="http://github.com/magiclabs/alchemy/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+    <p>Download the installer and put it in an executable folder. I.E.: <code>/usr/local/bin</code>.</p>
+		<p>Then open a shell and goto your projects folder and enter:</p>
+		<pre>alchemy new YOUR_APP_NAME</pre>
+		<p>After creation of the new project, follow the instructions displayed in the console. Then just switch to your browser and open <a href="http://localhost:3000/admin" target="_blank"><code>http://localhost:3000/admin</code></a> for creating your first admin user.</p>
+		
+    <h3>Rails 3 (beta)</h3>
+		<p>Make yourself a new rails 3 app with MySQL as database (Other db's should also work, but are NOT tested):</p>
+		<pre>rails new my_magicpage -d mysql</pre>
+		<p>Then open the <code>Gemfile</code> in an texteditor of your choice and insert this line:</p>
+		<pre>gem 'alchemy', '2.0.pre', :git => 'git://github.com/magiclabs/alchemy.git', :branch => 'rails3'</pre>
+		<p>Install the bundle:</p>
+		<pre>bundle install</pre>
+		<p>Then run these commands:</p>
+<pre>
+rake db:create
+rake db:migrate:alchemy
+rake alchemy:assets:copy:all
+</pre>
+		<p>Open <code>db/seeds.rb</code> in a texteditor and insert this line:</p>
+		<pre>Alchemy::Seeder.seed!</pre>
+		<p>Seed your database:</p>
+		<pre>rake db:seed</pre>
+		<p>Start the local server:</p>
+		<pre>rails server</pre>
+		<p>Then just switch to your browser and open <a href="http://localhost:3000/admin"><code>http://localhost:3000/admin</code></a> for creating your first admin user.</p>
+		<h4>Whew!</h4>
+		<h4>A lot of stuff, we know :)</h4>
+		<h4>We will provide an executable with the stable version of this gem. Promise!</h4>
+
+    <h2 id="community"><a href="#top">Community</a></h2>
+
+		<h4>Please feel free to contribute to Alchemy.</h4>
+		<p>Either through reporting issues in our <a href="http://issues.alchemy-cms.com">issue tracker</a>, or by <a href="https://github.com/magiclabs/alchemy">forking our project</a> and sending us pull requests.</p>
+    <p>You can clone the project with <a href="http://git-scm.com">Git</a>
       by running:
       <pre>$ git clone git://github.com/magiclabs/alchemy</pre>
     </p>
 
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/magiclabs/alchemy">magiclabs/alchemy</a>
-    </div>
+		<h3>Resources</h3>
+		<ul>
+			<li>Software Requirements: <a href="https://github.com/magiclabs/alchemy/wiki/Software-Requirements">Software Requirements</a></li>
+			<li>Wiki: <a href="http://wiki.alchemy-app.com">http://wiki.alchemy-cms.com</a></li>
+			<li>API Documentation: <a href="http://api.alchemy-app.com">http://api.alchemy-cms.com</a></li>
+			<li>Issue-Tracker: <a href="http://issues.alchemy-app.com">http://issues.alchemy-cms.com</a></li>
+			<li>Sourcecode: <a href="http://source.alchemy-app.com">http://source.alchemy-cms.com</a></li>
+			<li>User Group: <a href="http://groups.google.com/group/alchemy-cms">http://groups.google.com/group/alchemy-cms</a></li>
+		</ul>
+		
+		<h3>License</h3>
+		<h4>Alchemy is, and will allways be, free open source software.</h4>
+		<p>At the moment Alchemy is licensed under the most popular and widely used open source license GPLv3. You can read an online version of this license here:</p>
+    <p><a href="http://www.gnu.org/licenses/gpl.html">GPLv3</a></p>
+		<p>We are currently discussing a change of the license to an even more open and flexible license. But be sure, Alchemy will always stay open!</p>
+		
+    <h2 id="contact"><a href="#top">Contact</a></h2>
+		
+		<h3>Authors</h3>
+    <p>Robin Böning (robin.boening@nethosting4you.de)
+      <br/>Thomas von Deyen (tvdeyen@gmail.com)
+      <br/>Carsten Fregin (fregin@me.com)
+    </p>
+    <ul>
+			<li>magic labs*<a href="http://magiclabs.de">magic labs*</a></li>
+			<li>E-Mail<a href="mailto:alchemy@magiclabs.de">alchemy@magiclabs.de</a></li>
+			<li>Twitter <a href="https://twitter.com/alchemy_cms">https://twitter.com/alchemy_cms</a></li>
+		</ul>
 
   </div>
 
+	<footer>Alchemy is supernatural software coded by <a href="http://magiclabs.de">magic labs*</a></footer>
+	
   <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
