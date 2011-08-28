@@ -112,11 +112,11 @@ navigation a {
 	display: inline-block;
 	font-size: 14px;
 	line-height: 28px;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
 	color: #88ad59;
 	text-transform: uppercase;
-	margin-right: 0.5em;
+	margin-right: 12px;
 }
 
 label {
