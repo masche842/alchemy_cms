@@ -8,7 +8,7 @@
 
 <body>
 	<header id="top">
-		<a href="http://api.alchemy-app.com">API Docs</a> • <a href="https://github.com/magiclabs/alchemy">Source</a>
+		<a href="http://api.alchemy-app.com">API Docs</a> • <a href="https://github.com/magiclabs/alchemy_cms">Source</a>
 	</header>
   <div id="container">
 	
@@ -172,29 +172,28 @@
 		<pre>alchemy new YOUR_APP_NAME</pre>
 		<p>After creation of the new project, follow the instructions displayed in the console. Then just switch to your browser and open <a href="http://localhost:3000/admin" target="_blank"><code>http://localhost:3000/admin</code></a> for creating your first admin user.</p>
 		
-    <h3>Rails 3 (beta)</h3>
+    <h3>Rails 3</h3>
+    <h4>Easy peasy method:</h4>
+<pre>
+gem install alchemy
+alchemy new projectname
+</pre>
+<p>Follow the instructions.</p>
+    <h4>'Manually crafted' method:</h4>
 		<p>Make yourself a new rails 3 app with MySQL as database (Other db's should also work, but are NOT tested):</p>
-		<pre>rails new my_magicpage -d mysql</pre>
+		<pre>rails new my_magicpage -d mysql -JT</pre>
 		<p>Then open the <code>Gemfile</code> in an texteditor of your choice and insert this line:</p>
-		<pre>gem 'alchemy', '2.0.pre', :git => 'git://github.com/magiclabs/alchemy.git', :branch => 'rails3'</pre>
+		<pre>gem 'alchemy'</pre>
 		<p>Install the bundle:</p>
 		<pre>bundle install</pre>
 		<p>Then run these commands:</p>
 <pre>
-rake db:create
-rake db:migrate:alchemy
-rake alchemy:assets:copy:all
+rake alchemy:prepare
+rake db:create db:migrate db:seed
 </pre>
-		<p>Open <code>db/seeds.rb</code> in a texteditor and insert this line:</p>
-		<pre>Alchemy::Seeder.seed!</pre>
-		<p>Seed your database:</p>
-		<pre>rake db:seed</pre>
 		<p>Start the local server:</p>
 		<pre>rails server</pre>
 		<p>Then just switch to your browser and open <a href="http://localhost:3000/admin"><code>http://localhost:3000/admin</code></a> for creating your first admin user.</p>
-		<h4>Whew!</h4>
-		<h4>A lot of stuff, we know :)</h4>
-		<h4>We will provide an executable with the stable version of this gem. Promise!</h4>
 
 		<h2 id="guides"><a href="#top">Guidelines</a></h2>
 		
@@ -204,7 +203,7 @@ rake alchemy:assets:copy:all
     <h2 id="contribute"><a href="#top">Contribute</a></h2>
 
 		<h4>Please feel free to contribute to Alchemy.</h4>
-		<p>Either through reporting issues in our <a href="http://issues.alchemy-cms.com">issue tracker</a>, or by <a href="https://github.com/magiclabs/alchemy">forking our project</a> and sending us pull requests.</p>
+		<p>Either through reporting issues in our <a href="http://issues.alchemy-cms.com">issue tracker</a>, or by <a href="https://github.com/magiclabs/alchemy_cms">forking our project</a> and sending us pull requests.</p>
     <p>You can clone the project with <a href="http://git-scm.com">Git</a>
       by running:
       <pre>$ git clone git://github.com/magiclabs/alchemy</pre>
@@ -216,7 +215,7 @@ rake alchemy:assets:copy:all
 			<li>Guidelines: <a href="http://guides.alchemy-cms.com">http://guides.alchemy-cms.com</a></li>
 			<li>API Documentation: <a href="http://api.alchemy-cms.com">http://api.alchemy-cms.com</a></li>
 			<li>Issue-Tracker: <a href="https://github.com/magiclabs/alchemy/issues">https://github.com/magiclabs/alchemy/issues</a></li>
-			<li>Sourcecode: <a href="https://github.com/magiclabs/alchemy">https://github.com/magiclabs/alchemy</a></li>
+			<li>Sourcecode: <a href="https://github.com/magiclabs/alchemy_cms">https://github.com/magiclabs/alchemy_cms</a></li>
 			<li>User Group: <a href="http://groups.google.com/group/alchemy-cms">http://groups.google.com/group/alchemy-cms</a></li>
 		</ul>
 				
