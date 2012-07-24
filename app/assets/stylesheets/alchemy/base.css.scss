@@ -460,12 +460,13 @@ input#search_input_field {
 
 #archive_all {
   padding: 4*$default-padding;
+
+  .padding_left_right {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
 }
 
-#archive_all .padding_left_right {
-  padding-right: 8px;
-  padding-left: 8px;
-}
 
 .inplace-edit {
   background-color: $light-gray;
