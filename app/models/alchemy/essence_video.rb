@@ -6,7 +6,8 @@ module Alchemy
       :height,
       :allow_fullscreen,
       :auto_play,
-      :show_navigation
+      :show_navigation,
+      :attachment_id
     )
 
     acts_as_essence(
