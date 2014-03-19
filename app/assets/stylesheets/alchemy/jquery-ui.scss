@@ -1865,6 +1865,11 @@ button.ui-button::-moz-focus-inner {
   width: 17em;
   padding: $default-padding;
   display: none;
+
+  select {
+    height: 20px;
+    padding: 1px;
+  }
 }
 
 .ui-datepicker .ui-datepicker-header {

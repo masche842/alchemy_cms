@@ -165,5 +165,88 @@ module Alchemy
       end
     end
 
+    describe "#translations_for_select" do
+      it "should return an Array of Arrays with available locales" do
+        Alchemy::I18n.stub(:available_locales).and_return([:de, :en, :cz, :it])
+        expect(helper.translations_for_select).to have(4).items
+      end
+    end
+
+    describe '#clipboard_select_tag_options' do
+      let(:page) { build_stubbed(:page) }
+      before { helper.instance_variable_set('@page', page) }
+
+      context 'with element items' do
+        let(:element) { build_stubbed(:element) }
+        let(:clipboard_items) { [element] }
+
+        it "should include select options with the display name and preview text" do
+          element.stub(:display_name_with_preview_text).and_return('Name with Preview text')
+          expect(helper.clipboard_select_tag_options(clipboard_items)).to have_selector('option', text: 'Name with Preview text')
+        end
+
+        context "when @page can have cells" do
+          before { page.stub(:can_have_cells?).and_return(true) }
+          it "should group the elements in the clipboard by cell" do
+            helper.should_receive(:grouped_elements_for_select).and_return({})
+            helper.clipboard_select_tag_options(clipboard_items)
+          end
+        end
+      end
+
+      context 'with page items' do
+        let(:page_in_clipboard) { build_stubbed(:page, name: 'Page name') }
+        let(:clipboard_items) { [page_in_clipboard] }
+
+        it "should include select options with page names" do
+          expect(helper.clipboard_select_tag_options(clipboard_items)).to have_selector('option', text: 'Page name')
+        end
+      end
+    end
+
+    describe '#button_with_confirm' do
+      subject { button_with_confirm }
+
+      it "renders a button tag with a data attribute for confirm dialog" do
+        should have_selector('button[data-alchemy-confirm]')
+      end
+    end
+
+    describe '#delete_button' do
+      subject { delete_button('/admin/pages') }
+
+      it "renders a button tag" do
+        should have_selector('button')
+      end
+
+      it "returns a form tag with method=delete" do
+        should have_selector('form input[name="_method"][value="delete"]')
+      end
+    end
+
+    describe '#alchemy_datepicker' do
+      subject { alchemy_datepicker(essence, :date, {value: now}) }
+
+      let(:essence) { EssenceDate.new() }
+      let(:now)     { Time.now }
+
+      it "renders a date field" do
+        should have_selector("input[type='date']")
+      end
+
+      it "sets default date as value" do
+        should have_selector("input[value='#{::I18n.l(now, format: :datepicker)}']")
+      end
+
+      context 'with date stored on object' do
+        let(:date)    { Time.parse('1976-10-07 00:00 Z') }
+        let(:essence) { EssenceDate.new(date: date) }
+
+        it "sets this date as value" do
+          should have_selector("input[value='#{::I18n.l(date, format: :datepicker)}']")
+        end
+      end
+    end
+
   end
 end
